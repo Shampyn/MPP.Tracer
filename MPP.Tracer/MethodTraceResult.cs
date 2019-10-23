@@ -1,25 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace MPP.Tracer
 {
+    [JsonObject]
+    [Serializable]
+    [XmlRoot("method")]
     public class MethodTraceResult
     {
+        [JsonIgnore]
+        [XmlIgnore]
         public static MethodTraceResult StackTop { get; }
+
+        [JsonProperty("methods")]
+        [XmlArray("methods")]
         public List<MethodTraceResult> Methods { get; }
+
+        [JsonIgnore]
+        [XmlIgnore]
         public long WorkTime { get; set; }
+
+        [JsonProperty("class")]
+        [XmlAttribute("class")]
         public string ClassName { get; set; }
+
+        [JsonProperty("name")]
+        [XmlAttribute("name")]
         public string MethodName { get; set; }
 
+        [JsonIgnore]
+        [XmlIgnore]
         private Stopwatch _stopwatch;
-
-        static MethodTraceResult()
-        {
-            StackTop = new MethodTraceResult();
-            StackTop.ClassName = null;
-            StackTop.MethodName = null;
-        }
 
         public MethodTraceResult(string methodName, string className)
             : this()
@@ -34,6 +48,8 @@ namespace MPP.Tracer
             Methods = new List<MethodTraceResult>();
         }
 
+        [JsonProperty("time")]
+        [XmlAttribute("time")]
         public string WorkTimeStr
         {
             get
@@ -64,7 +80,7 @@ namespace MPP.Tracer
 
         public static bool AddNestedMethod(MethodTraceResult parent, MethodTraceResult child)
         {
-            if (child == null)
+            if (child == null || parent == null)
                 return false;
 
             parent.Methods.Add(child);

@@ -1,19 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
-
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace MPP.Tracer
 {
+    [JsonObject]
+    [Serializable]
+    [XmlRoot("thread")]
     public class ThreadTraceResult
     {
+        [JsonProperty("id")]
+        [XmlAttribute("id")]
         public uint Id { get; set; }
 
+        [JsonProperty("methods")]
+        [XmlArray("methods")]
         public List<MethodTraceResult> RootMethods { get; set; }//Methods
+
+        [JsonIgnore]
+        [XmlIgnore]
         public Stack<MethodTraceResult> InnerMethods { get; set; }//LastMethods
 
+        [JsonIgnore]
+        [XmlIgnore]
         public int MethodsCount { get; private set; }
 
+        [JsonIgnore]
+        [XmlIgnore]
+        public double WorkTime { get; set; }
+
+        [JsonProperty("time")]
+        [XmlAttribute("time")]
         public string WorkTimeStr
         {
             get
@@ -25,8 +44,7 @@ namespace MPP.Tracer
                 WorkTimeStr = value;
             }
         }
-
-        public double WorkTime { get; set; }
+       
 
         public ThreadTraceResult(uint id)
             : this()

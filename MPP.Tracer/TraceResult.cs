@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace MPP.Tracer
 {
+    [JsonObject]
+    [XmlRoot("root")]
+    [Serializable]
     public class TraceResult
     {
+        [JsonProperty("threads")]
+        [XmlElement("threads")]
         public ConcurrentDictionary<int, ThreadTraceResult> Threads { get; set; }
 
         public TraceResult()
