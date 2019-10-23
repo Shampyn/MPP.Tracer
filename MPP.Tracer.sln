@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPP.Tracer", "MPP.Tracer\MP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TracerLibrary", "TracerLibrary\TracerLibrary.csproj", "{C42C349D-6B01-4FED-99A4-4B8502667E39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TracerTests", "TracerTests\TracerTests.csproj", "{DD96A03B-18C0-48D5-A327-30434FE6EE31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C42C349D-6B01-4FED-99A4-4B8502667E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C42C349D-6B01-4FED-99A4-4B8502667E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C42C349D-6B01-4FED-99A4-4B8502667E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD96A03B-18C0-48D5-A327-30434FE6EE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD96A03B-18C0-48D5-A327-30434FE6EE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD96A03B-18C0-48D5-A327-30434FE6EE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD96A03B-18C0-48D5-A327-30434FE6EE31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

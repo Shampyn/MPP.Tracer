@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace MPP.Tracer
+namespace TracerLibrary
 {
     [JsonObject]
     [Serializable]

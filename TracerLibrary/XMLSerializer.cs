@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace MPP.Tracer
+namespace TracerLibrary
 {
    public class XMLSerializer
     {

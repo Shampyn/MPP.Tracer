@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace MPP.Tracer
+namespace TracerLibrary
 {
     public class JSONSerializer:ISerializer
     {
