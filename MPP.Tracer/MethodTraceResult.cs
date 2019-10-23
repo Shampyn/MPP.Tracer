@@ -80,7 +80,7 @@ namespace MPP.Tracer
 
         public static bool AddNestedMethod(MethodTraceResult parent, MethodTraceResult child)
         {
-            if (child == null || parent == null)
+            if (child == null)
                 return false;
 
             parent.Methods.Add(child);

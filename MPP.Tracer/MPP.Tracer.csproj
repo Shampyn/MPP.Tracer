@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConcurrentSerializableDictionary.cs" />
+    <Compile Include="ConsoleTraceResultWriter.cs" />
+    <Compile Include="FileTraceRusultWriter.cs" />
+    <Compile Include="IResultWriter.cs" />
     <Compile Include="ISerializer.cs" />
     <Compile Include="ITracer.cs" />
     <Compile Include="JSONSerializer.cs" />

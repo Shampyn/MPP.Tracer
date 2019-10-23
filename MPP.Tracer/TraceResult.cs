@@ -13,11 +13,11 @@ namespace MPP.Tracer
     {
         [JsonProperty("threads")]
         [XmlElement("threads")]
-        public ConcurrentDictionary<int, ThreadTraceResult> Threads { get; set; }
+        public ConcurrentSerializableDictionary<int, ThreadTraceResult> Threads { get; set; }
 
         public TraceResult()
         {
-            Threads = new ConcurrentDictionary<int, ThreadTraceResult>();
+            Threads = new ConcurrentSerializableDictionary<int, ThreadTraceResult>();
         }
 
         public int GetSummOfMethodsWorkTimes(int Indexofthread)
